@@ -10,12 +10,14 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING
         },
         rate: {
-            type: DataTypes.DOUBLE
+            type: DataTypes.DOUBLE,
+            defaultValue: 5
         },
         reservation_hours: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            defaultValue: 3
         },
-    }, {});
+    }, {tableName:"parking_lot"});
     ParkingLot.associate = function (models) {
         // associations can be defined here
 

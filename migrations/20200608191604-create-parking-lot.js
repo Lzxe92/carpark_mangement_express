@@ -16,7 +16,8 @@ module.exports = {
                 },
             },
             name: {
-                type: Sequelize.STRING
+                type: Sequelize.STRING,
+                unique:true
             },
             rate: {
                 type: Sequelize.DOUBLE
