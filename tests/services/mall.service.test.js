@@ -14,8 +14,8 @@ beforeEach(async () => {
     });
 });
 describe("MallService", function() {
-    describe("createMall", function() {
-        it("It should create a new mall", async function() {
+    describe("Create a new mall with dummy data", function() {
+        it("It should return a mall object with the same value as dummy data", async function() {
             const stubValue = {
                 name: faker.random.uuid(),
                 postal_code: faker.address.zipCode("######"),
@@ -26,6 +26,9 @@ describe("MallService", function() {
             const mallService = new MallService();
             const result = await mallService.createMall(stubValue);
             assert.isNotNull(result, 'Creation of mall failed');
+            expect(result.name).to.equal(stubValue.name);
+            expect(result.postal_code).to.equal(stubValue.postal_code);
+            expect(result.address).to.equal(stubValue.address);
         });
     });
 });

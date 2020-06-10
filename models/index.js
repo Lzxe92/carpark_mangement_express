@@ -7,11 +7,10 @@ const basename = path.basename(__filename);
 const config = require(__dirname + '/../config/settings.js');
 const env = config.env;
 const db = {};
-
 const sequelize = new Sequelize(config[env].db.database, config[env].db.username, config[env].db.password, {
     host: config[env].db.host,
     dialect: config[env].db.dialect,
-    x: false
+    logging: (env=='development')
 });
 
 fs.readdirSync(__dirname)
