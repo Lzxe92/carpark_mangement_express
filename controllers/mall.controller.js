@@ -56,7 +56,14 @@ exports.findAll = async function (req, res) {
     }
 }
 exports.findOne = async function (req, res) {
-
+    try {
+        const responseData = {};
+        responseData["mall_id"] = req.params.mall_id;
+        const mall = await MallService.findOne(responseData);
+        return res.status(200).json(mall);
+    } catch (error) {
+        return res.status(400).json({status: 400, message: error.message});
+    }
 };
 
 exports.update = async function (req, res) {

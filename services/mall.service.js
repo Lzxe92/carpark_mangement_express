@@ -1,4 +1,4 @@
-var models = require('../models');
+const models = require('../models');
 
 exports.findAll = async function (page, limit) {
     const mall = await models.Mall.findAll({
@@ -14,6 +14,26 @@ exports.findAll = async function (page, limit) {
         throw Error(error);
     });
     return mall;
+}
+
+exports.findOne = async function (data) {
+    const result = await models.Mall.findOne({
+        where: {
+            mall_id: data.mall_id,
+        },
+        include: [
+            {
+                model: models.ParkingLot,
+                as: 'parking_lots',
+            }
+        ]
+    }).then(function (mall) {
+        if (mall) {
+            return mall
+        }
+        throw Error("Mall id is invalid");
+    })
+    return result;
 }
 exports.createMall = async function (data) {
     const mall = await models.Mall.create({
