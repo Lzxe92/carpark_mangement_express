@@ -13,18 +13,16 @@ module.exports = {
             "host": "127.0.0.1",
             "dialect": "mysql",
             "operatorsAliases": false,
-            "dialect": "mysql",
         }
     },
-    preproduction: {
+    test: {
         db: {
             "username": "root",
             "password": null,
-            "database": "carpark_management_preproduction",
+            "database": "carpark_management_test",
             "host": "127.0.0.1",
             "dialect": "mysql",
             "operatorsAliases": false,
-            "dialect": "mysql",
         }
     },
     production: {
@@ -35,7 +33,6 @@ module.exports = {
             "host": "127.0.0.1",
             "dialect": "mysql",
             "operatorsAliases": false,
-            "dialect": "mysql",
         }
     },
 };
