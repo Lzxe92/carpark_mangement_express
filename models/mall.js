@@ -19,10 +19,12 @@ module.exports = (sequelize, DataTypes) => {
                 max: 999999
             }
         }
-    }, {freezeTableName: true});
+    }, {tableName: "mall"});
     Mall.associate = function (models) {
         Mall.hasMany(models.ParkingLot, {
-            onDelete: 'cascade'
+            onDelete: 'cascade',
+            foreignKey: 'mall_id',
+            as: 'parking_lots',
         });
     };
     return Mall;

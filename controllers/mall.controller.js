@@ -46,8 +46,14 @@ exports.createParkingLot = [
     }];
 
 exports.findAll = async function (req, res) {
-    console.log(req.query.test);
-    res.send('respond with a resource');
+    try {
+        const page = req.query.page ? req.query.page : 1;
+        const limit = req.query.limit ? req.query.limit : 10;
+        const malls = await MallService.findAll(page, limit);
+        return res.status(200).json(malls);
+    } catch (error) {
+        return res.status(400).json({status: 400, message: error.message});
+    }
 }
 exports.findOne = async function (req, res) {
 
