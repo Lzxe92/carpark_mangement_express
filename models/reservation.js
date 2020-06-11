@@ -34,11 +34,11 @@ module.exports = (sequelize, DataTypes) => {
         },
     }, {tableName: "reservation"});
     Reservation.associate = function (models) {
-        Reservation.hasOne(models.ParkingLot, {
+        Reservation.belongsTo(models.ParkingLot, {
             onDelete: 'cascade',
             foreignKey: 'reservation_id',
         });
-        Reservation.hasOne (models.Car, {
+        Reservation.belongsTo (models.Car, {
             onDelete: 'cascade',
             foreignKey: 'reservation_id',
         });

@@ -26,12 +26,6 @@ class MallService {
             where: {
                 mall_id: data.mall_id,
             },
-            include: [
-                {
-                    model: models.ParkingLot,
-                    as: 'parking_lots',
-                }
-            ]
         }).then(function (mall) {
             if (mall) {
                 return mall
