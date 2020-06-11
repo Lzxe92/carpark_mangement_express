@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             unique: true
         },
-    }, {freezeTableName: true});
+    }, {tableName: "car"});
     Car.associate = function (models) {
         // associations can be defined here
     };
