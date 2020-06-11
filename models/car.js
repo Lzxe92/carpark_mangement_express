@@ -12,7 +12,11 @@ module.exports = (sequelize, DataTypes) => {
         },
     }, {tableName: "car"});
     Car.associate = function (models) {
-        // associations can be defined here
+        Car.hasMany(models.Reservation, {
+            onDelete: 'cascade',
+            foreignKey: 'car_id',
+            as: 'reservations',
+        });
     };
     return Car;
 };

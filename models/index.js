@@ -10,7 +10,7 @@ const db = {};
 const sequelize = new Sequelize(config[env].db.database, config[env].db.username, config[env].db.password, {
     host: config[env].db.host,
     dialect: config[env].db.dialect,
-    logging: (env=='development')
+    logging: !(env=='development')
 });
 
 fs.readdirSync(__dirname)

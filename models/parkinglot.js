@@ -31,6 +31,11 @@ module.exports = (sequelize, DataTypes) => {
         ParkingLot.belongsTo(models.Mall, {
             foreignKey: 'mall_id',
         });
+        ParkingLot.hasMany(models.Reservation, {
+            onDelete: 'cascade',
+            foreignKey: 'parking_lot_id',
+            as: 'reservations',
+        });
     };
     return ParkingLot;
 };
