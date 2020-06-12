@@ -9,6 +9,7 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             mall_id: {
+                allowNull: false,
                 type: Sequelize.INTEGER,
                 references: {
                     model:"mall",

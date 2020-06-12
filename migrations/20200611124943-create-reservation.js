@@ -9,6 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       parking_lot_id: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         references: {
           model:"parking_lot",
@@ -16,6 +17,7 @@ module.exports = {
         },
       },
       car_id: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         references: {
           model:"car",
