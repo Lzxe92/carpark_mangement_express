@@ -4,6 +4,9 @@ Still in the process of finishing a carpark mangement restful backend.
 * Express as Backend
 * sequelize module for mysql orm
 * unit test via npm test 
+
+### Instructions
+Based on [instruction stated here](Instructions.md)
 ### Database Design
 https://docs.google.com/document/d/1eefCFmm3MZLQLExw0QNlpYnXKzA9bOWg49k15ZDFn2c/edit?usp=sharing
 
